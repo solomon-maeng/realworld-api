@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 gem "rails", "~> 7.0.4"
-gem "sqlite3", "~> 1.4"
+gem "mysql2"
 gem "puma", "< 6"
 gem 'faraday' # HTTP requests
 gem 'typhoeus' # Faraday http adapter
