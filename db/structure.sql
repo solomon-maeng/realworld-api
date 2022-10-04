@@ -28,13 +28,13 @@ CREATE TABLE `articles`
     `description` varchar(255) NOT NULL,
     `title`       varchar(255) NOT NULL,
     `slug`        varchar(255) NOT NULL,
-    `author_id`   bigint,
+    `user_id`     bigint,
     `created_at`  datetime(6),
     `updated_at`  datetime(6),
     PRIMARY KEY (`id`),
     KEY           `idx_created_at` (`created_at`),
     KEY           `idx_updated_at` (`updated_at`),
-    KEY           `idx_slug` (`slug`),
+    KEY           `idx_slug` (`slug`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 DROP TABLE IF EXISTS `comments`;
@@ -42,7 +42,7 @@ CREATE TABLE `comments`
 (
     `id`         bigint       NOT NULL AUTO_INCREMENT,
     `body`       varchar(255) NOT NULL,
-    `author_id`  bigint,
+    `user_id`    bigint,
     `article_id` bigint,
     `created_at` datetime(6),
     `updated_at` datetime(6),
