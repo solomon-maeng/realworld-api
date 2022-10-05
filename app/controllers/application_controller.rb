@@ -80,7 +80,6 @@ class ApplicationController < ActionController::API
 
   def error(e)
     Rails.logger.error(e)
-    send_newrelic_errors(e)
     meta = { message: '현재 요청사항을 처리할 수 없습니다. 잠시 후 다시 시도해주세요' }
 
     render json: { data: {}, meta: }, status: :internal_server_error

@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  has_secure_password
+
+  # TODO follows 매핑 처리
+
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
 
