@@ -13,6 +13,6 @@ class AuthenticateUser
   def user
     user = User.find_by(email: email)
     return user if user && user.authenticate(password)
-    raise(Exceptions::Unauthorized, '잘못된 인증 요청입니다.')
+    raise Exceptions::Unauthorized
   end
 end

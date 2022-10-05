@@ -10,6 +10,6 @@ class JsonWebToken
     body = JWT.decode(token, HMAC_SECRET)[0]
     HashWithIndifferentAccess.new body
   rescue JWT::DecodeError
-    raise Exceptions::Unauthorized, '잘못된 인증 요청입니다.'
+    raise Exceptions::Unauthorized
   end
 end

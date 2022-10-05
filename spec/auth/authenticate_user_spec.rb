@@ -15,7 +15,7 @@ RSpec.describe AuthenticateUser do
       context '유효하지 않은 자격' do
         it 'UnAuthorized 에러 발생' do
           expect { invalid_auth_obj.call }
-            .to raise_error(Exceptions::Unauthorized, '잘못된 인증 요청입니다.')
+            .to raise_error(Exceptions::Unauthorized)
         end
       end
     end

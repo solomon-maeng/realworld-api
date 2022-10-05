@@ -25,6 +25,6 @@ class AuthorizeApiRequest
     if headers['Authorization'].present?
       return headers['Authorization'].split(' ').last
     end
-    raise(Exceptions::Unauthorized, '잘못된 인증 요청입니다.')
+    raise Exceptions::Unauthorized
   end
 end

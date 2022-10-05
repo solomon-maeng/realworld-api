@@ -18,7 +18,7 @@ RSpec.describe AuthorizeApiRequest do
       context '토큰 유실' do
         it 'UnAuthorized 에러 발생' do
           expect { invalid_request_obj.call }
-            .to raise_error(Exceptions::Unauthorized, '잘못된 인증 요청입니다.')
+            .to raise_error(Exceptions::Unauthorized)
         end
       end
 
@@ -34,7 +34,7 @@ RSpec.describe AuthorizeApiRequest do
 
         it 'UnAuthorized 에러 발생' do
           expect { invalid_request_obj.call }
-            .to raise_error(Exceptions::Unauthorized, '잘못된 인증 요청입니다.')
+            .to raise_error(Exceptions::Unauthorized)
         end
       end
 
@@ -44,7 +44,7 @@ RSpec.describe AuthorizeApiRequest do
 
         it 'UnAuthorized 에러 발생' do
           expect { invalid_request_obj.call }
-            .to raise_error(Exceptions::Unauthorized, '잘못된 인증 요청입니다.')
+            .to raise_error(Exceptions::Unauthorized)
         end
       end
     end
