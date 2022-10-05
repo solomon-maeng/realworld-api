@@ -2,6 +2,9 @@ class ApplicationController < ActionController::API
   include JsonResolver
   include Exceptions
 
+  before_action :authorize_request
+  attr_reader :current_user
+
   rescue_from Exception do |e|
     error(e)
   end
@@ -83,5 +86,11 @@ class ApplicationController < ActionController::API
     meta = { message: '현재 요청사항을 처리할 수 없습니다. 잠시 후 다시 시도해주세요' }
 
     render json: { data: {}, meta: }, status: :internal_server_error
+  end
+
+  private
+
+  def authorize_request
+    @current_user = (AuthorizeApiRequest.new(request.headers).call)[:user]
   end
 end
