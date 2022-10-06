@@ -9,6 +9,6 @@ module JsonResolver
   end
 
   def json_create_success(data = {}, meta = {})
-    json_success(data, meta, 201)
+    json_success(data, meta, :created)
   end
 end
